@@ -72,19 +72,6 @@
         text-align: right;
         padding-left: 10px;
         }
-        .map-container-7{
-        overflow:hidden;
-        padding-bottom:30%;
-        position:relative;
-        height:0;
-        }
-        .map-container-7 iframe{
-        left:0;
-        top:0;
-        height:100%;
-        width:70%;
-        position:absolute;
-        }
     </style>
 </head>
 <body>
@@ -140,7 +127,7 @@
                 </ul>
             </div>
             <!--For main content area -->
-            <div class="col p-0" style="width: 58.60%">
+            <div class="col p-0 w-25">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="col-7 p-2 mb-0">   
                         <form class="form-inline active-cyan-4">
@@ -268,9 +255,6 @@ $('#collapse-icon').addClass('fa-angle-double-left');
 $('[data-toggle=sidebar-colapse]').click(function() {
     SidebarCollapse();
 });
-$(window).ready(function(){
-    $('.sidebar-collapsed').addClass('d-block');
-})
 function SidebarCollapse () {
     $('.menu-collapsed').toggleClass('d-none');
     $('.sidebar-submenu').toggleClass('d-none');
@@ -281,6 +265,15 @@ function SidebarCollapse () {
     $('#collapse-icon').toggleClass('fa-angle-double-left fa-angle-double-right');
 }
 });
+$(document).ready(function(){
+    $('.menu-collapsed').toggleClass('d-none');
+    $('.sidebar-submenu').toggleClass('d-none');
+    $('.submenu-icon').toggleClass('d-none');
+    $('#sidebar-container').toggleClass('sidebar-expanded sidebar-collapsed');
+    
+    // Collapse/Expand icon
+    $('#collapse-icon').toggleClass('fa-angle-double-left fa-angle-double-right');
+})
     </script>
 </body>
 </html>
